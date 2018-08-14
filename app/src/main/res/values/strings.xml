@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="buttonOne">1</string>
+    <string name="buttontwo">2</string>
+    <string name="buttonthree">3</string>
+    <string name="buttonminus">-</string>
+    <string name="buttonfour">4</string>
+    <string name="buttonfive">5</string>
+    <string name="buttonsix">6</string>
+    <string name="buttonplus">+</string>
+    <string name="buttonseven">7</string>
+    <string name="buttoneight">8</string>
+    <string name="buttonnine">9</string>
+    <string name="buttonmultiplication">*</string>
+    <string name="buttonzero">0</string>
+    <string name="buttonpoing">.</string>
+    <string name="buttonequal">=</string>
+    <string name="buttondivision">/</string>
+    <string name="history">Memo</string>
+    <string name="create_file">Create File</string>
+    <string name="show_file">Show File</string>
+    <string name="Clear">AC</string>
+    <string name="SquareRoot">sqrt()</string>
+    <string name="Square">X^2</string>
+    <string name="memoryplus">M+</string>
+    <string name="memoryminus">M-</string>
+    <string name="onebyx">1/X</string>
+    <string name="Eraze">Eraze</string>
+    <string name="memory">memory</string>
+    <string name="clearHistory">Clear History</string>
+    <string name="back">Back</string>
+    <string name="restore">Restore</string>
+</resources>
