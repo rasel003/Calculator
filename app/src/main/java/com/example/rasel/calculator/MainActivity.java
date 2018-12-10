@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        text = (EditText) findViewById(R.id.editText1);
+        text = findViewById(R.id.textView);
 
         value2 = value1 = result = 0.0;
         rplc = false;
@@ -34,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {  //saving the value when screen is retated
         super.onSaveInstanceState(outState);
         outState.putString("screenValue", text.getText().toString());
-        outState.putDouble("valueOne",value1);
-        outState.putDouble("valueTow",value2);
-        outState.putDouble("Result",result);
-        outState.putBoolean("replc",rplc);
-        outState.putBoolean("flag",flag);
+        outState.putDouble("valueOne", value1);
+        outState.putDouble("valueTow", value2);
+        outState.putDouble("Result", result);
+        outState.putBoolean("replc", rplc);
+        outState.putBoolean("flag", flag);
     }
 
     @Override

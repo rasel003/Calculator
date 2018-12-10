@@ -11,6 +11,7 @@
         android:id="@+id/topLinearLayout"
         android:layout_weight="1"
         android:orientation="vertical"
+        android:background="#bdbdbd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -30,6 +31,9 @@
             android:onClick="btnBackClicked"
             android:layout_marginBottom="20dp"
             android:textSize="20sp"
+            android:layout_margin="16dp"
+            android:background="#3e2723"
+            android:textColor="@android:color/white"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/back"/>
@@ -37,6 +41,9 @@
             android:layout_weight="1"
             android:onClick="ClearHistory"
             android:textSize="20sp"
+            android:layout_margin="16dp"
+            android:background="#3e2723"
+            android:textColor="@android:color/white"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/clearHistory"/>
@@ -50,6 +57,9 @@
             android:textSize="20sp"
             android:onClick="createFile"
             android:layout_weight="1"
+            android:background="#3e2723"
+            android:layout_margin="16dp"
+            android:textColor="@android:color/white"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/create_file"/>
@@ -57,6 +67,9 @@
             android:textSize="20sp"
             android:onClick="ShowFile"
             android:layout_weight="1"
+            android:background="#3e2723"
+            android:layout_margin="16dp"
+            android:textColor="@android:color/white"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/show_file"/>

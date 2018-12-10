@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="textboxcolor">#e4e2e2</color>
+    <color name="numberBackgroundColor">#616161</color>
+    <color name="buttonBackgroundColor">#212121</color>
 </resources>
