@@ -9,323 +9,485 @@
 
     <TableRow>
 
-        <EditText
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textView"
             android:layout_width="fill_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
             android:textColor="@android:color/white"
-            android:background="@color/numberBackgroundColor"
+            android:background="@color/buttonBackgroundColor"
             android:gravity="bottom|end"
             android:textSize="30sp" />
     </TableRow>
 
     <TableRow
         android:layout_marginTop="10dp"
+        android:clipToPadding="false"
         android:layout_weight="1">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMemoryPlus"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/buttonBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/buttonBackgroundColor"
             android:onClick="SingleOptionClicked"
             android:text="@string/memoryplus"
-            android:textColor="@android:color/white"
+            android:textColor="@color/buttonTextColorYellow"
             android:textSize="20sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMemoryMinus"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/buttonBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/buttonBackgroundColor"
             android:onClick="SingleOptionClicked"
             android:text="@string/memoryminus"
-            android:textColor="@android:color/white"
+            android:textColor="@color/buttonTextColorYellow"
             android:textSize="20sp" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btnEraze"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
             android:background="@color/buttonBackgroundColor"
             android:onClick="SingleImageOptionClicked"
             app:srcCompat="@drawable/ic_backspace_black_24dp"
+            android:tint="@color/buttonTextColorYellow"
             android:text="@string/Eraze"
             android:textColor="@android:color/white" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnClear"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/buttonBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/buttonBackgroundColor"
             android:onClick="SingleOptionClicked"
             android:text="@string/Clear"
-            android:textColor="@android:color/white"
+            android:textColor="@color/buttonTextColorYellow"
             android:textSize="20sp" />
 
     </TableRow>
 
     <TableRow android:layout_weight="1">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMemo"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/buttonBackgroundColor"
+            app:backgroundTint="@color/buttonBackgroundColor"
             android:onClick="showHistory"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
             android:text="@string/history"
-            android:textColor="@android:color/white"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="@color/buttonTextColorYellow"
             android:textSize="20sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnOnebyX"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
             android:layout_weight="1"
-            android:background="@color/buttonBackgroundColor"
+            app:backgroundTint="@color/buttonBackgroundColor"
             android:onClick="SingleOptionClicked"
             android:text="@string/onebyx"
-            android:textColor="@android:color/white"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="@color/buttonTextColorYellow"
             android:textSize="20sp" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btnSquare"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
             android:background="@color/buttonBackgroundColor"
             android:onClick="SingleImageOptionClicked"
             app:srcCompat="@drawable/ic_square"
-            android:textColor="@android:color/white" />
+            android:tint="@color/buttonTextColorYellow" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btnSquareRoot"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:insetTop="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
             android:background="@color/buttonBackgroundColor"
             android:onClick="SingleImageOptionClicked"
             app:srcCompat="@drawable/ic_square_root"
-            android:textColor="@android:color/white" />
+            android:tint="@color/buttonTextColorYellow" />
     </TableRow>
 
     <TableRow android:layout_weight="1">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button7"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:textColor="@android:color/white"
             android:layout_weight="1"
-            android:background="@color/numberBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/numberBackgroundColor"
             android:onClick="valueCliked"
             android:text="@string/buttonseven"
             android:textSize="25sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button8"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
             android:textColor="@android:color/white"
-            android:background="@color/numberBackgroundColor"
+            app:backgroundTint="@color/numberBackgroundColor"
             android:onClick="valueCliked"
             android:text="@string/buttoneight"
             android:textSize="25sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button9"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/numberBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/numberBackgroundColor"
             android:onClick="valueCliked"
             android:textColor="@android:color/white"
             android:text="@string/buttonnine"
             android:textSize="25sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonminus"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/buttonBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/buttonBackgroundColor"
             android:onClick="calculate"
             android:text="@string/buttonminus"
-            android:textColor="@android:color/white"
+            android:textColor="@color/buttonTextColorYellow"
             android:textSize="40sp" />
     </TableRow>
 
     <TableRow android:layout_weight="1">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button4"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/numberBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/numberBackgroundColor"
             android:onClick="valueCliked"
             android:text="@string/buttonfour"
             android:textColor="@android:color/white"
             android:textSize="25sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button5"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/numberBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/numberBackgroundColor"
             android:onClick="valueCliked"
             android:text="@string/buttonfive"
             android:textColor="@android:color/white"
             android:textSize="25sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button6"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/numberBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/numberBackgroundColor"
             android:onClick="valueCliked"
             android:text="@string/buttonsix"
             android:textColor="@android:color/white"
             android:textSize="25sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonplus"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
             android:layout_weight="1"
-            android:background="@color/buttonBackgroundColor"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/buttonBackgroundColor"
             android:onClick="calculate"
             android:text="@string/buttonplus"
-            android:textColor="@android:color/white"
+            android:textColor="@color/buttonTextColorYellow"
             android:textSize="25sp" />
     </TableRow>
 
     <TableRow android:layout_weight="1">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/numberBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/numberBackgroundColor"
             android:onClick="valueCliked"
             android:textColor="@android:color/white"
             android:text="@string/buttonOne"
             android:textSize="25sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button2"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/numberBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/numberBackgroundColor"
             android:onClick="valueCliked"
             android:textColor="@android:color/white"
             android:text="@string/buttontwo"
             android:textSize="25sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button3"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/numberBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/numberBackgroundColor"
             android:onClick="valueCliked"
             android:textColor="@android:color/white"
             android:text="@string/buttonthree"
             android:textSize="25sp" />
 
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonmul"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/buttonBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/buttonBackgroundColor"
             android:onClick="calculate"
             android:text="@string/buttonmultiplication"
-            android:textColor="@android:color/white"
+            android:textColor="@color/buttonTextColorYellow"
             android:textSize="20sp" />
     </TableRow>
 
     <TableRow android:layout_weight="1">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonpoint"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/numberBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/numberBackgroundColor"
             android:gravity="center"
             android:onClick="valueCliked"
             android:text="@string/buttonpoing"
             android:textColor="@android:color/white"
             android:textSize="35sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button0"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/numberBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/numberBackgroundColor"
             android:onClick="valueCliked"
             android:textColor="@android:color/white"
             android:text="@string/buttonzero"
             android:textSize="25sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button1eual"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/numberBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/numberBackgroundColor"
             android:onClick="calculate"
             android:textColor="@android:color/white"
             android:text="@string/buttonequal"
             android:textSize="35sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttondiv"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:background="@color/buttonBackgroundColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/buttonBackgroundColor"
             android:onClick="calculate"
             android:text="@string/buttondivision"
-            android:textColor="@android:color/white"
+            android:textColor="@color/buttonTextColorYellow"
             android:textSize="25sp" />
 
     </TableRow>

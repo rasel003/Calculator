@@ -10,9 +10,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.material.textview.MaterialTextView;
+
 public class MainActivity extends AppCompatActivity {
     private static double value1, value2, result;
-    private EditText text;
+    private MaterialTextView text;
     private boolean rplc, flag;
     private String sign = "";
     private SharedPreferences sharedPreferences;
@@ -92,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             }
             rplc = true;
             text.setText(String.valueOf(result));
-            text.setSelection(text.getText().length());
+            //text.setSelection(text.getText().length());
 
             String savedHistory = String.valueOf(value1) + sign + String.valueOf(value2) + "=" + result + "\n";
             String newValue = sharedPreferences.getString(getString(R.string.history), "");
@@ -126,6 +128,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void SingleOptionClicked(View view) {
         Button tmp = (Button) view;
+
+        if(text.getText().toString().isEmpty()){
+            return;
+        }
+
         if (tmp.getId() == R.id.btnClear) {
             text.setText("");
         } else if (tmp.getId() == R.id.btnOnebyX) {
@@ -151,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             text.setText(String.valueOf(value2));
             saveValuetoSharedPreference(getString(R.string.memory), String.valueOf(value2));
         }
-        text.setSelection(text.getText().length());
+        //text.setSelection(text.getText().length());
     }
 
     public void SingleImageOptionClicked(View view) { // Performing Operation On the Current Available Text Value Screen
@@ -176,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
             value2 = Math.sqrt(value2);
             text.setText(String.valueOf(value2));
         }
-        text.setSelection(text.getText().length());
+       // text.setSelection(text.getText().length());
     }
 
     public void saveValuetoSharedPreference(String tag, String str) { // Saving value In Share Preferences Memory
