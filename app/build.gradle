@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "com.example.rasel.calculator"
+        applicationId "com.rasel.calculator"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 2

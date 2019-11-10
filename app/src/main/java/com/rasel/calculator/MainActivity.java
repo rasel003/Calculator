@@ -1,4 +1,4 @@
-package com.example.rasel.calculator;
+package com.rasel.calculator;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
