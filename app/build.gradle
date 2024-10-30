@@ -1,34 +1,66 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
 
 android {
-    compileSdkVersion 28
+    compileSdk 35
+    buildToolsVersion = '34.0.0'
+
     defaultConfig {
         applicationId "com.example.rasel.calculator"
-        minSdkVersion 21
-        targetSdkVersion 34
+        namespace "com.example.rasel.calculator"
+
+        minSdkVersion 26
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
+        vectorDrawables.useSupportLibrary true
+
+        testInstrumentationRunner "com.example.rasel.calculator.CustomTestRunner"
     }
+
     buildTypes {
         release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    namespace 'com.example.rasel.calculator'
+    buildFeatures {
+        dataBinding true
+        // viewBinding true
+        buildFeatures {
+            viewBinding true
+        }
+        buildConfig true
+    }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        // work-runtime-ktx 2.1.0 and above now requires Java 8
+        jvmTarget = "11"
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation 'androidx.core:core-ktx:1.15.0'
+
+    implementation "androidx.appcompat:appcompat:1.7.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.2.0"
+
+    //New Material Design
+//    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation 'androidx.browser:browser:1.8.0'
+
+   /* androidTestImplementation 'androidx.test:core:1.6.1'
+    androidTestImplementation "junit:junit:4.13.2"
+
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    testImplementation 'androidx.test:runner:1.6.2'
+    testImplementation 'androidx.test:core:1.6.1'
+    testImplementation 'androidx.test.ext:junit:1.2.1'*/
 }
