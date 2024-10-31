@@ -6,4 +6,5 @@
     <color name="textboxcolor">#e4e2e2</color>
     <color name="numberBackgroundColor">#616161</color>
     <color name="buttonBackgroundColor">#212121</color>
+    <color name="arabic_green">#006464</color>
 </resources>
