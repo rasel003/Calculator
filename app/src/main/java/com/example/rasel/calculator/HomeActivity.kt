@@ -32,29 +32,29 @@ class HomeActivity : AppCompatActivity() {
             webUrl = "http://app.dwasa.org.bd/index.php?type_name=member&page_name=acc_index&panel_index="
         ),
         ServiceModel(
-            title = "জন্ম gনিবন্ধন",
+            title = "NID",
             imageUrl = R.drawable.ic_launcher_background,
-            webUrl = "https://everify.bdris.gov.bd/"
+            webUrl = "https://services.nidw.gov.bd/nid-pub/"
         ),
         ServiceModel(
-            title = "ওয়াসা বিলr",
+            title = "Passport",
             imageUrl = R.drawable.ic_launcher_background,
-            webUrl = "http://app.dwasa.org.bd/index.php?type_name=member&page_name=acc_index&panel_index="
+            webUrl = "https://www.epassport.gov.bd/authorization/login"
         ),
         ServiceModel(
-            title = "ওয়াসা বিলv",
+            title = "Desco",
             imageUrl = R.drawable.ic_launcher_background,
-            webUrl = "http://app.dwasa.org.bd/index.php?type_name=member&page_name=acc_index&panel_index="
+            webUrl = "https://prepaid.desco.org.bd/customer/#/customer-info"
         ),
         ServiceModel(
-            title = "জন্ম নিবন্ধনh",
+            title = "Driving Licence",
             imageUrl = R.drawable.ic_launcher_background,
-            webUrl = "https://everify.bdris.gov.bd/"
+            webUrl = "https://bsp.brta.gov.bd/login/"
         ),
         ServiceModel(
-            title = "ওয়াসা বিলd",
+            title = "HSC/SSC/Diploma/Dakhil",
             imageUrl = R.drawable.ic_launcher_background,
-            webUrl = "http://app.dwasa.org.bd/index.php?type_name=member&page_name=acc_index&panel_index="
+            webUrl = "http://www.educationboardresults.gov.bd/result.php"
         )
     )
 
