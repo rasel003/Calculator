@@ -37,7 +37,7 @@ class HomeActivity : AppCompatActivity() {
             webUrl = "https://services.nidw.gov.bd/nid-pub/"
         ),
         ServiceModel(
-            title = "Passport",
+            title = "পাসপোর্ট",
             imageUrl = R.drawable.ic_launcher_background,
             webUrl = "https://www.epassport.gov.bd/authorization/login"
         ),
@@ -47,7 +47,7 @@ class HomeActivity : AppCompatActivity() {
             webUrl = "https://prepaid.desco.org.bd/customer/#/customer-info"
         ),
         ServiceModel(
-            title = "Driving Licence",
+            title = "ড্রাইভিং লাইসেন্স",
             imageUrl = R.drawable.ic_launcher_background,
             webUrl = "https://bsp.brta.gov.bd/login/"
         ),
