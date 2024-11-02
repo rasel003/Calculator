@@ -1,4 +1,4 @@
-package com.example.rasel.calculator.bl.data
+package com.rasel.calculator.bl.data
 
 import androidx.recyclerview.widget.DiffUtil
 

@@ -1,4 +1,4 @@
-package com.example.rasel.calculator
+package com.rasel.calculator
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -11,10 +11,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.databinding.DataBindingUtil
-import com.example.rasel.calculator.bl.core.decorator.AdaptiveSpacingItemDecoration
-import com.example.rasel.calculator.bl.data.ServiceModel
-import com.example.rasel.calculator.databinding.ActivityHomeBinding
-import com.example.rasel.calculator.ui.dashboard.HomeAdapter
+import com.rasel.calculator.bl.core.decorator.AdaptiveSpacingItemDecoration
+import com.rasel.calculator.bl.data.ServiceModel
+import com.rasel.calculator.databinding.ActivityHomeBinding
+import com.rasel.calculator.ui.dashboard.HomeAdapter
 
 
 class HomeActivity : AppCompatActivity() {

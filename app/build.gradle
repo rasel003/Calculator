@@ -9,8 +9,8 @@ android {
     buildToolsVersion = '34.0.0'
 
     defaultConfig {
-        applicationId "com.example.rasel.calculator"
-        namespace "com.example.rasel.calculator"
+        applicationId "com.rasel.calculator"
+        namespace "com.rasel.calculator"
 
         minSdkVersion 26
         targetSdkVersion 35
@@ -18,7 +18,7 @@ android {
         versionName "1.0"
         vectorDrawables.useSupportLibrary true
 
-        testInstrumentationRunner "com.example.rasel.calculator.CustomTestRunner"
+        testInstrumentationRunner "com.rasel.calculator.CustomTestRunner"
     }
 
     buildTypes {

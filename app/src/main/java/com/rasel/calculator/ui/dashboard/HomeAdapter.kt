@@ -1,4 +1,4 @@
-package com.example.rasel.calculator.ui.dashboard
+package com.rasel.calculator.ui.dashboard
 /*
  * Copyright 2019 Google LLC
  *
@@ -20,9 +20,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.rasel.calculator.bl.data.LessonDiff
-import com.example.rasel.calculator.bl.data.ServiceModel
-import com.example.rasel.calculator.databinding.HomeItemBinding
+import com.rasel.calculator.bl.data.LessonDiff
+import com.rasel.calculator.bl.data.ServiceModel
+import com.rasel.calculator.databinding.HomeItemBinding
 
 class HomeAdapter(
     private val onClick: (ServiceModel) -> Unit
