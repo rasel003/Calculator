@@ -12,8 +12,23 @@
         android:layout_height="match_parent"
         tools:context="com.rasel.calculator.HomeActivity">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnScan"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/dimen_16"
+            android:background="@drawable/item_bg"
+            android:layout_marginTop="@dimen/dimen_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Scan"
+            android:visibility="gone"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/rvFeatureList"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"/>
+
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv"
+            android:id="@+id/rvFeatureList"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:clipToPadding="false"
@@ -23,7 +38,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnScan"
             app:spanCount="2"
             tools:listitem="@layout/home_item" />
 

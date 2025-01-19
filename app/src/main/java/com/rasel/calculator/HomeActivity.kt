@@ -8,6 +8,7 @@ import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.content.Intent.FLAG_ACTIVITY_REQUIRE_NON_BROWSER
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.databinding.DataBindingUtil
@@ -23,37 +24,30 @@ class HomeActivity : AppCompatActivity() {
     val dataList = listOf(
         ServiceModel(
             title = "জন্ম নিবন্ধন",
-            imageUrl = R.drawable.ic_launcher_background,
             webUrl = "https://everify.bdris.gov.bd/"
         ),
         ServiceModel(
             title = "ওয়াসা বিল",
-            imageUrl = R.drawable.ic_launcher_background,
             webUrl = "http://app.dwasa.org.bd/index.php?type_name=member&page_name=acc_index&panel_index="
         ),
         ServiceModel(
             title = "NID",
-            imageUrl = R.drawable.ic_launcher_background,
             webUrl = "https://services.nidw.gov.bd/nid-pub/"
         ),
         ServiceModel(
             title = "পাসপোর্ট",
-            imageUrl = R.drawable.ic_launcher_background,
             webUrl = "https://www.epassport.gov.bd/authorization/login"
         ),
         ServiceModel(
             title = "Desco",
-            imageUrl = R.drawable.ic_launcher_background,
             webUrl = "https://prepaid.desco.org.bd/customer/#/customer-info"
         ),
         ServiceModel(
             title = "ড্রাইভিং লাইসেন্স",
-            imageUrl = R.drawable.ic_launcher_background,
             webUrl = "https://bsp.brta.gov.bd/login/"
         ),
         ServiceModel(
             title = "HSC/SSC/Diploma/Dakhil",
-            imageUrl = R.drawable.ic_launcher_background,
             webUrl = "http://www.educationboardresults.gov.bd/result.php"
         )
     )
@@ -63,10 +57,18 @@ class HomeActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
 
         setHomeAdapter()
+        setUpScanner()
     }
 
+    private fun setUpScanner() {
+        binding.btnScan.setOnClickListener {
+            launchDefaultQRScanner()
+        }
+    }
+
+
     private fun setHomeAdapter() {
-        binding.rv.apply {
+        binding.rvFeatureList.apply {
             adapter = lessonAdapter
             addItemDecoration(
                 AdaptiveSpacingItemDecoration(
@@ -126,6 +128,37 @@ class HomeActivity : AppCompatActivity() {
         CustomTabActivityHelper.openCustomTab(
             this, customTabsIntent, Uri.parse(url), WebviewFallback()
         )
+    }
+
+    private fun launchDefaultQRScanner() {
+        try {
+            val intent = Intent("com.google.zxing.client.android.SCAN")
+            intent.putExtra("SCAN_MODE", "QR_CODE_MODE") // Set scan mode to QR code only
+            startActivityForResult(intent, REQUEST_CODE_SCAN)
+        } catch (e: ActivityNotFoundException) {
+            // Handle the case when no QR scanner app is found
+            Toast.makeText(this, "No QR scanner app found", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == REQUEST_CODE_SCAN) {
+            if (resultCode == RESULT_OK) {
+                // Get the scan result
+                val scannedData = data?.getStringExtra("SCAN_RESULT")
+                Toast.makeText(this, "Scanned: $scannedData", Toast.LENGTH_LONG).show()
+                // Process the scanned data
+            } else if (resultCode == RESULT_CANCELED) {
+                // Handle cancelation
+                Toast.makeText(this, "Scan canceled", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    companion object {
+        private const val REQUEST_CODE_SCAN = 1
     }
 
 
