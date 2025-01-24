@@ -8,10 +8,12 @@ import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.content.Intent.FLAG_ACTIVITY_REQUIRE_NON_BROWSER
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.databinding.DataBindingUtil
+import com.google.mlkit.vision.barcode.common.Barcode
+import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions
+import com.google.mlkit.vision.codescanner.GmsBarcodeScanning
 import com.rasel.calculator.bl.core.decorator.AdaptiveSpacingItemDecoration
 import com.rasel.calculator.bl.data.ServiceModel
 import com.rasel.calculator.databinding.ActivityHomeBinding
@@ -21,7 +23,7 @@ import com.rasel.calculator.ui.dashboard.HomeAdapter
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
 
-    val dataList = listOf(
+    private val dataList = listOf(
         ServiceModel(
             title = "জন্ম নিবন্ধন",
             webUrl = "https://everify.bdris.gov.bd/"
@@ -72,8 +74,8 @@ class HomeActivity : AppCompatActivity() {
             adapter = lessonAdapter
             addItemDecoration(
                 AdaptiveSpacingItemDecoration(
-                    size = resources.getDimensionPixelSize(R.dimen.dimen_16),
-                    edgeEnabled = false
+                    size = resources.getDimensionPixelSize(R.dimen.dimen_8),
+                    edgeEnabled = true
                 )
             )
         }
@@ -110,11 +112,16 @@ class HomeActivity : AppCompatActivity() {
 
         val customTabsIntent = CustomTabsIntent.Builder().apply {
             setUrlBarHidingEnabled(true)
+            // shows the title of web-page in toolbar
             this.setShowTitle(true)
             setBookmarksButtonEnabled(false)
             setDownloadButtonEnabled(false)
 //            this.setCloseButtonPosition(CustomTabsIntent.CLOSE_BUTTON_POSITION_END)
 //            setCloseButtonIcon(toBitmap(myCustomCloseIcon))
+
+
+            // setShareState(CustomTabsIntent.SHARE_STATE_ON) will add a menu to share the web-page
+            setShareState(CustomTabsIntent.SHARE_STATE_OFF)
 
             /* setStartAnimations(this@MainActivity, R.anim.slide_in_right, R.anim.slide_out_left)
              setExitAnimations(this@MainActivity, android.R.anim.slide_in_left, android.R.anim.slide_out_right)*/
@@ -123,43 +130,28 @@ class HomeActivity : AppCompatActivity() {
         customTabsIntent.launchUrl(this, Uri.parse(url))
     }
 
-    private fun openInCustomTabs2(url: String) {
-        val customTabsIntent = CustomTabsIntent.Builder().build()
-        CustomTabActivityHelper.openCustomTab(
-            this, customTabsIntent, Uri.parse(url), WebviewFallback()
-        )
-    }
-
     private fun launchDefaultQRScanner() {
-        try {
-            val intent = Intent("com.google.zxing.client.android.SCAN")
-            intent.putExtra("SCAN_MODE", "QR_CODE_MODE") // Set scan mode to QR code only
-            startActivityForResult(intent, REQUEST_CODE_SCAN)
-        } catch (e: ActivityNotFoundException) {
-            // Handle the case when no QR scanner app is found
-            Toast.makeText(this, "No QR scanner app found", Toast.LENGTH_SHORT).show()
-        }
-    }
+        val options = GmsBarcodeScannerOptions.Builder()
+            .setBarcodeFormats(
+                Barcode.FORMAT_QR_CODE,
+                Barcode.FORMAT_AZTEC)
+            .enableAutoZoom()
+            .build()
+        val scanner = GmsBarcodeScanning.getClient(this, options)
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+        scanner.startScan()
+            .addOnSuccessListener { barcode ->
+                // Task completed successfully
+                barcode.rawValue?.let {
+                    openUrl(it)
+                }
 
-        if (requestCode == REQUEST_CODE_SCAN) {
-            if (resultCode == RESULT_OK) {
-                // Get the scan result
-                val scannedData = data?.getStringExtra("SCAN_RESULT")
-                Toast.makeText(this, "Scanned: $scannedData", Toast.LENGTH_LONG).show()
-                // Process the scanned data
-            } else if (resultCode == RESULT_CANCELED) {
-                // Handle cancelation
-                Toast.makeText(this, "Scan canceled", Toast.LENGTH_SHORT).show()
             }
-        }
+            .addOnCanceledListener {
+                // Task canceled
+            }
+            .addOnFailureListener { e ->
+                // Task failed with an exception
+            }
     }
-
-    companion object {
-        private const val REQUEST_CODE_SCAN = 1
-    }
-
-
 }

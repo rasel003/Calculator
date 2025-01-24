@@ -15,5 +15,7 @@
     <dimen name="grid_0_5">4dp</dimen>
     <dimen name="grid_1_5">12dp</dimen>
 
+    <dimen name="dimen_8">8dp</dimen>
     <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_36">26dp</dimen>
 </resources>

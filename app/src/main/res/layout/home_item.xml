@@ -14,8 +14,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="RtlSymmetry"
-    >
+    tools:ignore="RtlSymmetry">
 
     <data>
 
@@ -29,23 +28,22 @@
         android:layout_height="wrap_content"
         android:foreground="?attr/selectableItemBackground">
 
-        <TextView
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:id="@+id/title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingVertical="8dp"
             android:ellipsize="end"
-            android:background="@drawable/item_bg"
-            android:paddingHorizontal="@dimen/grid_2"
+            android:maxLines="1"
+            app:strokeColor="@color/arabic_green"
             android:text="@{lesson.title}"
-            android:textColor="@android:color/white"
             android:textAlignment="center"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0"
-            app:layout_constraintVertical_chainStyle="packed"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.App.Circular"
             tools:text="@tools:sample/cities" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
