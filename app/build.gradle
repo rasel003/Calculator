@@ -21,8 +21,8 @@ android {
 
         minSdkVersion 26
         targetSdkVersion 36
-        versionCode 50
-        versionName "50.0"
+        versionCode 51
+        versionName "51.0"
         vectorDrawables.useSupportLibrary true
 
         testInstrumentationRunner "com.rasel.calculator.CustomTestRunner"
