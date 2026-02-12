@@ -79,7 +79,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="W:\Pictures\DALL·E 2024-11-11 00.45.43 - A 512x512 pixel digital app icon featuring a red and green color scheme inspired by the Bangladeshi flag, with a modern and clean depiction of the Ban.jpg" />
+                                                <entry key="imagePath" value="M:\DALL·E 2025-01-26 17.10.19 - A high-resolution digital artwork inspired by a 512x512 app icon design, featuring a red and green color scheme reminiscent of the Bangladeshi flag. T.webp" />
                                                 <entry key="scalingPercent" value="67" />
                                               </map>
                                             </option>
@@ -108,6 +108,11 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                    </map>
+                                  </option>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="previewDensity" value="hdpi" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -271,6 +276,11 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                    </map>
+                                  </option>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="previewDensity" value="hdpi" />
                                     </map>
                                   </option>
                                 </PersistentState>

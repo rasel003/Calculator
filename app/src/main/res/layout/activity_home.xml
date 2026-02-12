@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="@dimen/dimen_16"
         tools:context="com.rasel.calculator.HomeActivity">
 
 
@@ -35,8 +36,6 @@
             android:layout_marginHorizontal="@dimen/dimen_16"
             android:layout_marginBottom="@dimen/dimen_16"
             android:text="@string/scan"
-            android:insetTop="2dp"
-            android:insetBottom="2dp"
             android:textSize="16sp"
             app:iconSize="18dp"
             app:icon="@drawable/baseline_qr_code_scanner_24"

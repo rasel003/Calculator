@@ -1,21 +1,28 @@
 plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.kapt")
+    id "com.diffplug.spotless"
+}
+
+spotless {
+    kotlin {
+        target "**/*.kt"
+        ktlint().userData(['max_line_length': '100'])
+    }
 }
 
 android {
-    compileSdk 35
-    buildToolsVersion = '34.0.0'
+    compileSdk = 36
 
     defaultConfig {
         applicationId "com.rasel.calculator"
         namespace "com.rasel.calculator"
 
         minSdkVersion 26
-        targetSdkVersion 35
-        versionCode 49
-        versionName "49.0"
+        targetSdkVersion 36
+        versionCode 50
+        versionName "50.0"
         vectorDrawables.useSupportLibrary true
 
         testInstrumentationRunner "com.rasel.calculator.CustomTestRunner"
@@ -27,36 +34,33 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     buildFeatures {
         dataBinding true
-        // viewBinding true
-        buildFeatures {
-            viewBinding true
-        }
+        viewBinding true
         buildConfig true
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        // work-runtime-ktx 2.1.0 and above now requires Java 8
-        jvmTarget = "11"
+        jvmTarget = '17'
     }
 }
 
 dependencies {
 
-    implementation "androidx.appcompat:appcompat:1.7.0"
-    implementation "androidx.constraintlayout:constraintlayout:2.2.0"
+    implementation "androidx.appcompat:appcompat:1.7.1"
+    implementation "androidx.constraintlayout:constraintlayout:2.2.1"
     implementation 'com.google.android.gms:play-services-code-scanner:16.1.0'
 
     //New Material Design
-    implementation "com.google.android.material:material:1.12.0"
-    implementation 'androidx.browser:browser:1.8.0'
+    implementation "com.google.android.material:material:1.13.0"
+    implementation("androidx.activity:activity-ktx:1.12.4")
+    implementation 'androidx.browser:browser:1.9.0'
     implementation 'androidx.recyclerview:recyclerview:1.4.0'
 }
