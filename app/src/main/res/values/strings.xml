@@ -31,4 +31,26 @@
     <string name="back">Back</string>
     <string name="restore">Restore</string>
     <string name="scan">Scan</string>
+
+    <string-array name="service_titles">
+        <item>জন্ম নিবন্ধন</item>
+        <item>ওয়াসা বিল</item>
+        <item>NID</item>
+        <item>পাসপোর্ট</item>
+        <item>Desco</item>
+        <item>ড্রাইভিং লাইসেন্স</item>
+        <item>HSC/SSC/Diploma/Dakhil</item>
+    </string-array>
+
+    <string-array name="service_urls">
+        <item>https://everify.bdris.gov.bd/</item>
+        <item>http://app.dwasa.org.bd/index.php?type_name=member&amp;page_name=acc_index&amp;panel_index=</item>
+        <item>https://services.nidw.gov.bd/nid-pub/</item>
+        <item>https://www.epassport.gov.bd/authorization/login</item>
+        <item>https://prepaid.desco.org.bd/customer/#/customer-info</item>
+        <item>https://bsp.brta.gov.bd/login/</item>
+        <item>http://www.educationboardresults.gov.bd/result.php</item>
+    </string-array>
+    <string name="error_null_qr_value">Null value received</string>
+    <string name="error_qr_scan_failed">Failed to scan QR code</string>
 </resources>
