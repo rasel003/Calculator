@@ -4,19 +4,19 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
-    plugins {
-        id 'com.android.application' version '9.0.0'
-        id 'org.jetbrains.kotlin.kapt' version '2.3.10'
-        id "com.diffplug.spotless" version "8.2.1"
-    }
 }
+
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
-        maven { url "https://jitpack.io" }
     }
 }
+
 rootProject.name = "Sheba"
-include ':app'
+include(":app")
